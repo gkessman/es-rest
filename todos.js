@@ -58,6 +58,18 @@ router.get('/students/:id', function (req, res) {
 	});
 });
 
+router.post('/students', function(req, res) {
+	es.index({
+		index: 'students',
+		type: 'student',
+		body: req.body
+	}).then(function(resp) {
+		res.json(resp);
+	}, function(err) {
+		console.trace(err.message);
+	})
+});
+
 router.post('/add', function(req, res) {
 	var newItem = req.body.newItem;
 
