@@ -1,12 +1,13 @@
 var express = require('express');
 var es = require("./elastic");
 
-
-
-
 var router = express.Router();
 
 var students = [];
+
+router.get('/', function (req, res) {
+	res.render('index');
+});
 
 router.get('/students', function (req, res) {
 	// load data from DB here
