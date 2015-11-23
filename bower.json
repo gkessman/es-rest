@@ -1,0 +1,24 @@
+{
+  "name": "es-rest",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "gkessman <greg.kessman@gmail.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/gkessman/es-rest",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "backbone": "~1.2.3"
+  }
+}

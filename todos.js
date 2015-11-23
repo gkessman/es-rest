@@ -3,6 +3,8 @@ var es = require("./elastic");
 
 var router = express.Router();
 
+router.use(express.static(__dirname + '/public'));
+
 var students = [];
 
 router.get('/', function (req, res) {
