@@ -16,7 +16,7 @@ app.use(bodyParser());
 
 // define routes
 
-app.use(require('./todos'));
+app.use(require('./routes'));
 
 // Start server
 
