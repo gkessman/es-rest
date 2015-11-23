@@ -3,7 +3,7 @@ $(function() {
 	collection.fetch({
 		success: function(data) {
 			var view = new StudentsView({ collection: data });
-			$("body").append(view.render().el);
+			$(".container").append(view.render().el);
 		}
 	});
 })
