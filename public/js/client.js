@@ -40,13 +40,32 @@ var StudentsView = Backbone.View.extend({
 });
 
 var AppRouter = Backbone.Router.extend({
-	routes: {
-		"": "index"
+	initialize: function() {
+		this._setupCollection();
 	},
+
+	routes: {
+		"": "index",
+		"student/:id": "singleStudent"
+	},
+
+	_setupCollection: function() {
+		if(this.collection) return;
+		var data = $('#initialContent').html();
+		this.collection = new Students(JSON.parse(data));
+	},
+
+	_renderView: function(view) {
+		$('.container').append(view.render().el);
+	},
+
 	index: function() {
-		var collection = new Students();
-		collection.fetch({ reset: true });
-		var view = new StudentsView({ collection: collection });
-		$(".container").append(view.render().el);
+		// var collection = new Students(JSON.parse(data));
+		var view = new StudentsView({ collection: this.collection });
+		this._renderView(view);
+	},
+
+	singleStudent: function(id) {
+
 	}
 });

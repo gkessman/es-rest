@@ -19,4 +19,14 @@ es.ping({
 	}
 });
 
+// Return ALL search query
+es.all = {
+	index: 'students',
+	body: {
+		query: {
+			match_all: {}
+		}
+	}
+}
+
 module.exports = es;
