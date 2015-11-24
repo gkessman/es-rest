@@ -1,12 +1,16 @@
 extends layout
 
 block content
+	h1 Backbone App
+
+	div#initialContent
+		= appData
 
 	div.container
-		h1 Backbone App
 
-		div#initialContent
-			= appData
+	script(id="studenttemplate", type="text/x-handlebars")
+		<a href="#" class="name">{{name}}</a>
 
-		script(id="studenttemplate", type="text/x-handlebars")
-			{{name}}, {{email}}
+	script(id="morestudenttemplate", type="text/x-handlebars")
+		<h2>{{name}}</h2>
+		<p>Email Address: {{email}}</p>

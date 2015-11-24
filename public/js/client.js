@@ -12,17 +12,38 @@ var Students = Backbone.Collection.extend({
 });
 
 var StudentView = Backbone.View.extend({
+	events: {
+		"click .name": "singleStudentLink"
+	},
+
 	tagName: "li",
 	className: "student",
+
 	render: function() {
 		var template = $("#studenttemplate").html();
 		var compiled = Handlebars.compile(template);
 		var html = compiled(this.model.attributes._source);
 		this.$el.html(html);
 		return this;
+	},
+
+	singleStudentLink: function(e) {
+		e.preventDefault();
+		var id = this.model.get("_id");
+		router.navigate("student/" + id, {trigger: true});
 	}
 });
 
+var MoreStudentView = Backbone.View.extend({
+	render: function() {
+		var template = $("#morestudenttemplate").html();
+		var compiled = Handlebars.compile(template);
+		var html = compiled(this.model.attributes._source);
+		this.$el.html(html);
+		return this;
+	}
+});
+	
 var StudentsView = Backbone.View.extend({
 	initialize: function() {
 		this.listenTo(this.collection, "reset", this.render);
@@ -56,16 +77,18 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	_renderView: function(view) {
-		$('.container').append(view.render().el);
+		$('.container').html(view.render().el);
 	},
 
 	index: function() {
-		// var collection = new Students(JSON.parse(data));
 		var view = new StudentsView({ collection: this.collection });
 		this._renderView(view);
 	},
 
 	singleStudent: function(id) {
-
+		console.log("singleStudentMethod", id);
+		var student = this.collection.get(id);
+		var view = new MoreStudentView({ model: student });
+		this._renderView(view);
 	}
 });
