@@ -1,0 +1,21 @@
+define(['backbone', 'views/student'], function(Backbone, StudentView) {
+	var StudentCollectionView = Backbone.View.extend({
+		initialize: function() {
+			this.listenTo(this.collection, "reset", this.render);
+		},
+		tagName: "ul",
+		className: "students",
+		render: function() {
+			this.$el.html("");
+			this.collection.each(function(student) {
+				var studentView = new StudentView({
+					model: student
+				});
+				this.$el.append(studentView.render().el);
+			}, this);
+			return this;
+		}
+	});
+
+	return StudentCollectionView;
+});

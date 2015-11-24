@@ -2,13 +2,8 @@ doctype html
 html
 	head
 		title Backbone App
-		link(rel='stylesheet', href='bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet', href='/js/bower_components/bootstrap/dist/css/bootstrap.css')
 		link(rel='stylesheet', href='/css/style.css')
-		script(src='underscore/underscore-min.js')
-		script(src='jquery/dist/jquery.min.js')
-		script(src='backbone/backbone-min.js')
-		script(src='handlebars/handlebars.min.js')
-		script(src='/js/client.js')
-		script(src='/js/init.js')
+		script(src='/js/bower_components/requirejs/require.js', data-main='/js/require.config.js')
 	body
 		block content
