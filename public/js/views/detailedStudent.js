@@ -1,8 +1,11 @@
-define(['backbone', 'handlebars'], function(Backbone, Handlebars) {
+define([
+	'backbone',
+	'handlebars',
+	'text!templates/detailedStudentTemplate.jade'
+], function(Backbone, Handlebars, DetailedStudentTemplate) {
 	var DetailedStudentView = Backbone.View.extend({
 		render: function() {
-			var template = $("#morestudenttemplate").html();
-			var compiled = Handlebars.compile(template);
+			var compiled = Handlebars.compile(DetailedStudentTemplate);
 			var html = compiled(this.model.attributes._source);
 			this.$el.html(html);
 			return this;

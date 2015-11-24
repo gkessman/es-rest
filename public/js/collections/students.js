@@ -1,4 +1,7 @@
-define(['backbone', 'models/student'], function(Backbone, Student) {
+define([
+	'backbone', 
+	'models/student'
+], function(Backbone, Student) {
 	return Backbone.Collection.extend({
 
 		model: Student,

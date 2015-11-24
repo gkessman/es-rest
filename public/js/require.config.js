@@ -4,7 +4,9 @@ require.config({
 		jquery: 'bower_components/jquery/dist/jquery.min',
 		backbone: 'bower_components/backbone/backbone-min',
 		underscore: 'bower_components/underscore/underscore-min',
-		handlebars: 'bower_components/handlebars/handlebars.min'
+		handlebars: 'bower_components/handlebars/handlebars.min',
+		text: 'bower_components/text/text',
+		templates: '../templates'
 	},
 	shim: {
 		backbone: {

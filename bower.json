@@ -21,6 +21,7 @@
     "bootstrap": "~3.3.5",
     "backbone": "~1.2.3",
     "handlebars": "~4.0.5",
-    "requirejs": "~2.1.22"
+    "requirejs": "~2.1.22",
+    "require-jade": "~0.0.3"
   }
 }

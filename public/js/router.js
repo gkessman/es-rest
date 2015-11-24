@@ -1,5 +1,10 @@
-define(['backbone', 'events', 'collections/students', 'views/studentCollection', 'views/detailedStudent'],
-	function(Backbone, Events, Students, StudentCollectionView, DetailedStudentView) {
+define([
+	'backbone', 
+	'events', 
+	'collections/students', 
+	'views/studentCollection', 
+	'views/detailedStudent'
+], function(Backbone, Events, Students, StudentCollectionView, DetailedStudentView) {
 		var Router = Backbone.Router.extend({
 			initialize: function() {
 				var self = this;
