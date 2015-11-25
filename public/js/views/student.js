@@ -3,12 +3,14 @@ define([
 	'handlebars', 
 	'jquery', 
 	'events', 
-	'text!templates/studentTemplate.jade'
+	'text!templates/studentTemplate.html'
 ], function(Backbone, Handlebars, $, Events, StudentTemplate) {
 	var StudentView = Backbone.View.extend({
 		events: {
 			"click .name": "singleStudentLink"
 		},
+		tagName: 'tr',
+		className: 'student',
 		render: function() {
 			var compiled = Handlebars.compile(StudentTemplate);
 			var html = compiled(this.model.attributes._source);

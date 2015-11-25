@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'handlebars',
-	'text!templates/detailedStudentTemplate.jade'
+	'text!templates/detailedStudentTemplate.html'
 ], function(Backbone, Handlebars, DetailedStudentTemplate) {
 	var DetailedStudentView = Backbone.View.extend({
 		render: function() {
