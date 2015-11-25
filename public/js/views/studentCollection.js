@@ -4,8 +4,8 @@ define([
 ], function(Backbone, StudentView) {
 	var StudentCollectionView = Backbone.View.extend({
 
-		// tagName: 'tr',
-		
+		tagName: 'tbody',
+
 		initialize: function() {
 			this.listenTo(this.collection, "reset", this.render);
 		},
