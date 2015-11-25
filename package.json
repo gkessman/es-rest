@@ -10,7 +10,8 @@
     "jade": "~1.11.0"
   },
   "devDependencies": {
-    "fly": "~0.8.3"
+    "fly": "~0.8.3",
+    "flightplan": "~0.6.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -10,6 +10,7 @@ var tmpDir = appName+'-' + new Date().getTime();
 plan.target('production', [
   {
     host: 'namsek.info',
+    port: '8728',
     username: username,
     agent: process.env.SSH_AUTH_SOCK
   },
