@@ -20,6 +20,6 @@ app.use(require('./routes'));
 
 // Start server
 
-app.listen(3000, function() {
+app.listen(8999, function() {
 	console.log('Running on port 3000');
 });
