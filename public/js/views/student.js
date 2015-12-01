@@ -11,8 +11,6 @@ define([
 		},
 		el: '.content',
 		render: function() {
-			// console.log(this.model.models.attributes._source);
-			// var students = this.model.models;
 			var compiled = Handlebars.compile(StudentTemplate);
 			var html = compiled({students : this.model.models});
 			this.$el.html(html);
