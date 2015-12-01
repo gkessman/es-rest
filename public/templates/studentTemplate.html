@@ -1,2 +1,19 @@
-<td><a href="#" class="name">{{name}}</a></td>
-<td>{{email}}</td>
+<hr />
+<a href="#/add" class="btn btn-primary">New Student</a>
+<hr />
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Student</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each students}}
+		<tr>
+			<td>{{this.attributes._source.name}}</td>
+			<td>{{this.attributes._source.email}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

@@ -9,11 +9,12 @@ define([
 		events: {
 			"click .name": "singleStudentLink"
 		},
-		tagName: 'tr',
-		className: 'student',
+		el: '.content',
 		render: function() {
+			// console.log(this.model.models.attributes._source);
+			// var students = this.model.models;
 			var compiled = Handlebars.compile(StudentTemplate);
-			var html = compiled(this.model.attributes._source);
+			var html = compiled({students : this.model.models});
 			this.$el.html(html);
 			return this;
 		},

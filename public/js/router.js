@@ -2,9 +2,9 @@ define([
 	'backbone', 
 	'events', 
 	'collections/students', 
-	'views/studentCollection', 
+	'views/student', 
 	'views/detailedStudent'
-], function(Backbone, Events, Students, StudentCollectionView, DetailedStudentView) {
+], function(Backbone, Events, Students, StudentView, DetailedStudentView) {
 		var Router = Backbone.Router.extend({
 			initialize: function() {
 				var self = this;
@@ -26,13 +26,14 @@ define([
 			},
 
 			_renderView: function(view) {
-				$('.content').html(view.render().el);
+				$('.container').html(view.render().el);
 			},
 
 			index: function() {
-
-				var view = new StudentCollectionView({
-					collection: this.collection
+				var student = this.collection;
+				var view = new StudentView({
+					// collection: this.collection
+					model: student
 				});
 				this._renderView(view);
 			},
