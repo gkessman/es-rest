@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var port = 8999;
 
 var app = express();
 
@@ -20,6 +21,6 @@ app.use(require('./routes'));
 
 // Start server
 
-app.listen(8999, function() {
-	console.log('Running on port 3000');
+app.listen(port, function() {
+	console.log('App listening on port ' + port);
 });
